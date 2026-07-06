@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Energy Billing - Kundenverwaltung</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <a href="index.html">⬅ Zurück zum Hauprmenü</a>
+  <h2>👥 Neuen Kunden hinzufügen</h2>
+  <form id="customerForm">
+    <div class="form-group">
+      <label for="firstName">Vorname: </label>
+      <input type="text" id="firstName" required placeholder="z.B. Vova">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Nachname: </label>
+      <input type="text" id="lastName" required>
+    </div>
+    <div class="form-group">
+      <label for="email">E-Mail: </label>
+      <input type="email" id="email" required placeholder="vova@example.com">
+    </div>
+    <div class="form-group">
+      <label for="address">Addresse: </label>
+      <input type="text" id="address" required>
+    </div>
+    <div class="form-group">
+      <label for="meterNumber">Zählernummer: </label>
+      <input type="text" id="meterNumber" required placeholder="M-12345">
+    </div>
+    <button type="submit">Kunden speichern</button>
+  </form>
+
+  <div id="customerResult" class="result-message"></div>
+
+  <div class="section-box" style="margin-top: 30px;">
+    <h2><span class="icon">📋</span> Registrierte Kunden</h2>
+    <table id="customersTable" class="data-table" style="display: none; width: 100%; border-collapse: collapse; margin-top: 15px;">
+      <thead>
+        <tr style="background-color: #f2f2f2; text-align: left;">
+          <th>ID</th>
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>E-Mail</th>
+          <th>Addresse</th>
+          <th>Zählernummer</th>
+        </tr>
+      </thead>
+      <tbody id="customersTableBody">
+        </tbody>
+    </table>
+    <div id="noCustomersMessage" style="text-align: center; color: #666; padding: 15px;">
+      Kundenliste wird geladen...
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

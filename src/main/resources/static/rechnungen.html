@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Energy Billing - Rechnungen & Finanzen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <a href="index.html">⬅ Zurück zum Hauptmenü</a>
+  <div class="card">
+    <h1>🧾 Neue Rechnungen erstellen</h1>
+    <form id="billForm">
+      <div class="form-group">
+        <label for="billCustomerId">Kunden-ID: </label>
+        <input type="number" id="billCustomerId" required placeholder="z.B. 5">
+      </div>
+      <div class="form-group">
+        <label for="billTariffId">Tarif-ID: </label>
+        <input type="number" id="billTariffId" value="1" required>
+        <small>1 - Basisstrom, 2 - Oekostrom</small>
+      </div>
+      <div class="form-group">
+        <label for="billKwh">Verbrauch im kWh: </label>
+        <input type="number" step="0.1" id="billKwh" required>
+      </div>
+      <button type="submit">Rechnungen generieren</button>
+    </form>
+    <div id="billResult" class="result-message"></div>
+  </div>
+  <div class="card">
+    <h2>💳 Zahlung abwickeln</h2>
+    <div class="form-group">
+      <label for="payBillId">Rechnungs-ID: </label>
+      <input type="number" id="payBillId" placeholder="z.B. 6">
+    </div>
+    <button type="button" id="payButton">Rechnung bezahlen</button>
+    <div id="payResult" class="result-message"></div>
+
+    <hr>
+
+    <h2>📊 Finanzstatus des Unternehmens</h2>
+    <button type="button" id="unpaidButton">Offene Beträge prüfen</button>
+    <div id="analyticsResult" style="display: none" class="result-box"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
